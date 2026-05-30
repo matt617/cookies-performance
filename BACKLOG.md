@@ -45,22 +45,30 @@ Conversion done (bake into WorldBuilder / a CharacterBuilder module later):
 - HumanoidRootPart anchored + invisible; all limbs unanchored, massless, no-collide
   (so an in-place display NPC animates without falling).
 - Scaled with Model:ScaleTo(1.87) -> about 7.3 studs tall.
-- Colored all parts chocolate-chip brown (141,85,36).
-- Posed arms down: rotate each shoulder Motor6D C0 by +/-72 deg about local Z and move
-  the arm parts to match, so the rest pose is not a T-pose.
 - Verified: a default R15 dance (rbxassetid://507771019) loads and plays (head moved).
 
-Template lives at ReplicatedStorage.CookieRigTemplate. Clones placed over the old
-CookiePreview (stage star), BackupDancer1-5 (behind stage, z=-135), and Dummy1-3
-(choreo studio). Old dummies deleted.
+LOOK (redesigned): the imported human-shaped mesh read as "people," so the look is now
+built from primitives on the same R15 skeleton. The 15 mesh body parts are hidden
+(Transparency=1) and used only as weld anchors so the cartoon shapes still animate:
+- Big round chocolate-chip cookie as the whole body+face: a Ball (4.0 x 4.3 x 1.9,
+  color 208,148,88) welded to UpperTorso at offset (0, 0.7, 0).
+- Face welded to the body front (local +Z ~0.9): two dark eye balls, a 5-ball smile arc,
+  two pink cheek balls, and 8 dark chip balls (92,52,26) around the edge.
+- Stubby limbs welded to the upper-arm / upper-leg parts (so they animate at the joints):
+  arm nubs + small hand balls at the sides, leg nubs + flat feet below. Tan 208,148,88,
+  accents 170,112,60.
+- Star (CookiePreview only): a turquoise hair bow on top (loops 64,209,196; knot
+  38,176,168), a soft pink PointLight glow, and a gentle gold sparkle ParticleEmitter.
+  Deliberately light; the earlier cape/headset version was too much.
+- After building, each placed rig is dropped to its floor by a downward raycast (stage
+  deck y=6, choreo floor y=0.5).
+
+Template at ReplicatedStorage.CookieRigTemplate carries the full cartoon look. The 9
+placed rigs: CookiePreview (stage star), BackupDancer1-5 (z=-135), Dummy1-3 (choreo).
 
 Still TODO:
-- Face + chocolate-chip graphics via nanobanana: the model has a flat head front panel
-  and torso panel for decals. Generate a face (eyes, smile, cheek star) and a chip
-  pattern, upload as images, apply to Head/UpperTorso.
-- Wire dance animations (the choreo record-and-playback mechanic) and a looping idle so
-  NPCs are never statically posed in play.
-- Star Cookie costume layer (cape, headset, sparkle) on the on-stage rig only.
+- Wire dance animations (choreo record-and-playback) and a looping idle so NPCs are
+  never statically posed in play.
 
 Note: a pre-existing ProfileStore script in the place logs DataStore load failures in
 Studio playtest (needs Studio API access enabled, or it is placeholder). Unrelated to
