@@ -1,0 +1,19 @@
+# Roblox build artifacts
+*.rbxl
+*.rbxlx
+*.rbxlx.lock
+*.rbxm
+*.rbxmx
+
+# macOS
+.DS_Store
+
+# weppy Studio-local sync: a generated mirror of the live Studio session.
+# The Rojo src/ tree is the source of truth, so the mirror is ignored. It
+# churns constantly (renames, transient test props, test logs) and weppy
+# regenerates it live, so there is nothing to gain from tracking it.
+weppy-project-sync/
+
+# Large source media. The .png and .mp3 assets are kept locally and uploaded
+# to Roblox by asset ID; they do not need to live in git history.
+assets/*.mp3
