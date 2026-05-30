@@ -32,6 +32,40 @@ When the WorldBuilder script is written (build step 2), bake the cupcake audienc
 mesh ids above, scale 2.5, the varied frosting palette, and the grid math
 (columns 8 studs apart, rows 13 apart and tiered up 2 studs).
 
+## Cookie character rig (star + dancers)
+
+The blocky dummies were replaced with a proper cartoon cookie person. Source model
+asset 129366199099946 imported as 15 R15-named MeshParts + 15 Motor6Ds + RootPart.
+
+Conversion done (bake into WorldBuilder / a CharacterBuilder module later):
+- Renamed RootPart -> HumanoidRootPart, set as PrimaryPart.
+- Renamed the 15 Motor6Ds to standard R15 joint names (Root, Waist, Neck, LeftShoulder,
+  LeftElbow, LeftWrist, ... LeftHip, LeftKnee, LeftAnkle, and the right side).
+- Removed the AnimationController, added a Humanoid (RigType R15) + Animator.
+- HumanoidRootPart anchored + invisible; all limbs unanchored, massless, no-collide
+  (so an in-place display NPC animates without falling).
+- Scaled with Model:ScaleTo(1.87) -> about 7.3 studs tall.
+- Colored all parts chocolate-chip brown (141,85,36).
+- Posed arms down: rotate each shoulder Motor6D C0 by +/-72 deg about local Z and move
+  the arm parts to match, so the rest pose is not a T-pose.
+- Verified: a default R15 dance (rbxassetid://507771019) loads and plays (head moved).
+
+Template lives at ReplicatedStorage.CookieRigTemplate. Clones placed over the old
+CookiePreview (stage star), BackupDancer1-5 (behind stage, z=-135), and Dummy1-3
+(choreo studio). Old dummies deleted.
+
+Still TODO:
+- Face + chocolate-chip graphics via nanobanana: the model has a flat head front panel
+  and torso panel for decals. Generate a face (eyes, smile, cheek star) and a chip
+  pattern, upload as images, apply to Head/UpperTorso.
+- Wire dance animations (the choreo record-and-playback mechanic) and a looping idle so
+  NPCs are never statically posed in play.
+- Star Cookie costume layer (cape, headset, sparkle) on the on-stage rig only.
+
+Note: a pre-existing ProfileStore script in the place logs DataStore load failures in
+Studio playtest (needs Studio API access enabled, or it is placeholder). Unrelated to
+the rig; check when wiring persistence.
+
 ## Microphone stands (stage + vocal booth)
 
 Both mics were swapped from primitives to a real 3D mic stand model. Bake these into
@@ -80,6 +114,7 @@ Decal asset ids:
 - Whisked: 91027214032610
 - Phantom of the Oven-a: 119237852227850
 - Frosted: 105554672061540
+- Benson Boule: 121808504895619 (on the BACK wall, x=0 z=89.9, Decal Face Front)
 
 Bake into WorldBuilder later. Easy to add more posters: same pattern, pick a free z.
 
