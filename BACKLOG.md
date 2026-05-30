@@ -32,6 +32,34 @@ When the WorldBuilder script is written (build step 2), bake the cupcake audienc
 mesh ids above, scale 2.5, the varied frosting palette, and the grid math
 (columns 8 studs apart, rows 13 apart and tiered up 2 studs).
 
+## Microphone stands (stage + vocal booth)
+
+Both mics were swapped from primitives to a real 3D mic stand model. Bake these into
+the WorldBuilder script (build step 2) so they rebuild themselves and stay in git.
+
+Reference assets (already uploaded):
+- Mic model: 115718750691398
+- MicHead mesh: rbxassetid://90336745786197
+- MicBody mesh: rbxassetid://100940891365855
+- StandPole mesh: rbxassetid://106569234227425
+- StandBase mesh: rbxassetid://104906637161860
+- Template lives at ReplicatedStorage.MicStandTemplate (4-part Model).
+
+Build settings used:
+- Scale: 2.5 (gives a slim stand about 5.46 studs tall, base 1.1 wide).
+- Colors: MicHead (195,196,200) Metal, MicBody (38,38,44) SmoothPlastic,
+  StandPole (172,174,178) Metal, StandBase (34,34,40) SmoothPlastic.
+
+Placements (base sits on the floor at these spots):
+- Stage: Workspace.Venue.Stage.MicStand at (0, 6.0, -122). This is about 2.5 studs in
+  front of where Cookie stands (she is at X=0, Z=-124.8 on a deck top of Y=6), so the
+  slim stand does not cover her. Mic head lands near Y=11.46, her mouth height.
+- Vocal booth: Workspace.Venue.VocalBooth.MicStand at (-50, 0.4, 0), centered on the
+  booth floor plate inside the half-wall ring.
+
+Note: the headset mic on the cookie avatar (CookiePreview.Costume MicBoom + MicBall) is
+separate and intentionally left as is.
+
 ## EastWallCupcake (optional)
 
 The cupcake on the wall in Venue.Walls is still the old primitive version. Swap it
