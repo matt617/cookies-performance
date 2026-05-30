@@ -15,14 +15,18 @@ These are locked decisions. Confirm with Matt before deviating.
 
 ### Tone and audience
 - The whole experience exists to make a 7-year-old feel like a star for 90 seconds.
-- No losing. No leaderboards. No numeric scores shown to players. No failure language.
+- No losing. No leaderboards. No ranking one player against another. No failure language.
 - The applause meter starts at 50% and only goes up. Every show is a good show.
+- The one allowed on-screen number is Sprinkles, a happy collectible currency earned by
+  playing (see DESIGN.md). It is personal and only goes up, never a grade or a comparison.
 - Code can be messy and assets can be primitive. The feeling cannot be wrong: lights
   drop, song starts, dancers fall in behind her, confetti at the end, dad watching.
 
 ### Scope (do not expand without asking)
 - No monetization, ever. No Robux purchases, no game passes, no premium currency.
-- No real scoring or leaderboards. The meter only goes up.
+- No leaderboards, no ranking players against each other. The applause meter only goes up.
+- A Sprinkles economy is in scope (earn by playing, spend later, see DESIGN.md). Soft
+  currency only: never purchasable with Robux or real money.
 - No voice chat. Roblox voice chat is age-gated and not relevant here.
 - No tutorial NPC. Matt cut this on purpose. Floor signs and single-line hints only.
 - Production crew ships 2 stations in v1: Lights and Stage FX. Sound mixing and Dance
@@ -124,6 +128,10 @@ feels (avatar, choreo playback, a full show), not at every micro-change.
 10. Audio integration: note charts and beat grids once the Suno tracks are uploaded.
 
 ## The V1 spec
+
+> The live interactive show model in DESIGN.md is the current direction and supersedes
+> the prep-then-watch round structure below. The zones, mechanics, venue, and tone here
+> still apply; the loop is now a live performance the whole room plays together.
 
 ### Session structure (rounds), roughly 8-12 minutes
 1. Prep phase (4-5 min): Cookie trains vocals and choreography. Crew sets light and FX
@@ -230,8 +238,9 @@ Avoid everywhere:
 - Em dashes. Use commas or split the sentence.
 - AI-sounding words: "leverage", "utilize", "seamless", "robust", "holistic",
   "paradigm", "cutting-edge", "delve", "tapestry".
-- Numeric scores, comparative language ("better than last show"), failure language
-  ("you lost", "try again", "you missed").
+- Comparative language ("better than last show", "your friend earned more"), failure
+  language ("you lost", "try again", "you missed"). A Sprinkles count is fine to show;
+  a grade, a rank, or a player-vs-player score is not.
 
 When in doubt: would this make a 7-year-old smile, or feel like a math test? Aim for smile.
 
