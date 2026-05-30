@@ -60,6 +60,29 @@ Placements (base sits on the floor at these spots):
 Note: the headset mic on the cookie avatar (CookiePreview.Costume MicBoom + MicBall) is
 separate and intentionally left as is.
 
+## Wall posters (baked-good universe)
+
+Eight framed mock concert/theatre posters hang on the side walls. Art is in
+assets/posters/ (generated with nanobanana). Each board is a thin Part with a gold
+Metal frame Part behind it, under Workspace.Venue.Posters. Decals already uploaded
+and applied. West-wall boards use Decal Face Right, east-wall boards use Face Left.
+
+Layout (boards centered at y=13, ~9 wide x 13.5 tall):
+- West wall (x=-79.7): TaylorSift z=-110, Bunyonce z=-70, ElvisPretzely z=-20, DoughaLipa z=40
+- East wall (x=79.7): BrunoMacaroon z=-110, Whisked z=-70, PhantomOvena z=-20, Frosted z=40
+
+Decal asset ids:
+- Taylor Sift: 76712388279635
+- Bun-yonce: 73753750679212
+- Elvis Pretzely: 78182678868270
+- Dough-a Lipa: 117315526562000
+- Bruno Macaroon: 119565125149458
+- Whisked: 91027214032610
+- Phantom of the Oven-a: 119237852227850
+- Frosted: 105554672061540
+
+Bake into WorldBuilder later. Easy to add more posters: same pattern, pick a free z.
+
 ## EastWallCupcake (optional)
 
 The cupcake on the wall in Venue.Walls is still the old primitive version. Swap it
