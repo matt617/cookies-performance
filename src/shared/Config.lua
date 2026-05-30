@@ -25,9 +25,10 @@ Config.CURTAIN_CALL_SECONDS = 60
 -- Cookie queue.
 Config.QUEUE_ROUND_CAP = 2 -- only applies when someone else is waiting
 
--- Choreography.
+-- Choreography. Full move data (names, animation ids, speeds) lives in
+-- ReplicatedStorage.Shared.DanceMoves. These are the 6 ids shown on the radial wheel.
 Config.RECORD_BEATS = 32
-Config.DANCE_MOVES = { "wave", "spin", "jump", "clap", "point", "shuffle" }
+Config.DANCE_WHEEL = { "bop", "twist", "sway", "disco", "cheer", "runningman" }
 
 -- Applause meter. Starts halfway and only ever goes up.
 Config.APPLAUSE_START = 50
